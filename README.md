@@ -1,12 +1,21 @@
 # 📚 DB QUERY
 
-## MongoDB CRUD Queries
+This repository demonstrates **CRUD operations** using:
 
-Basic **CRUD operations** using **MongoDB** for a **Book Shop database**.
+- **MongoDB (NoSQL)**
+- **SQL (Relational Database)**
+
+Example project: **Book Shop Database**
 
 ---
 
-## 🗄 Creating Database
+# 🍃 MongoDB CRUD Queries
+
+Basic CRUD operations using **MongoDB**.
+
+---
+
+## 🗄 Create Database
 
 ```javascript
 use("book_shop")
@@ -16,7 +25,7 @@ use("book_shop")
 
 ---
 
-##  Insert One Data
+## ➕ Insert One Document
 
 ```javascript
 db.books.insertOne({
@@ -32,7 +41,7 @@ db.books.insertOne({
 
 ---
 
-##  Insert Many Data
+## ➕ Insert Multiple Documents
 
 ```javascript
 db.books.insertMany([
@@ -57,7 +66,7 @@ db.books.insertMany([
 
 ---
 
-##  Update One Data
+## ✏️ Update One Document
 
 ```javascript
 db.books.updateOne(
@@ -70,7 +79,7 @@ db.books.updateOne(
 
 ---
 
-##  Update Many Data
+## ✏️ Update Multiple Documents
 
 ```javascript
 db.books.updateMany(
@@ -83,7 +92,7 @@ db.books.updateMany(
 
 ---
 
-##  Find One Data
+## 🔍 Find One Document
 
 ```javascript
 db.books.findOne({ id: 1 })
@@ -93,7 +102,7 @@ db.books.findOne({ id: 1 })
 
 ---
 
-##  Find All Data
+## 🔍 Find All Documents
 
 ```javascript
 db.books.find()
@@ -103,7 +112,7 @@ db.books.find()
 
 ---
 
-##  Delete One Data
+## ❌ Delete One Document
 
 ```javascript
 db.books.deleteOne({ id: 2 })
@@ -113,7 +122,7 @@ db.books.deleteOne({ id: 2 })
 
 ---
 
-##  Delete Many Data
+## ❌ Delete Multiple Documents
 
 ```javascript
 db.books.deleteMany({ book_price: { $gt: 500 } })
@@ -123,17 +132,146 @@ db.books.deleteMany({ book_price: { $gt: 500 } })
 
 ---
 
+# 🗄 SQL CRUD Queries (Book Shop Database)
 
+Basic CRUD operations using SQL with **Foreign Key relationship**.
 
+---
 
-## 🛠 Tools Used
+## Create Database
+
+```sql
+CREATE DATABASE book_shop;
+USE book_shop;
+```
+
+---
+
+## Create Authors Table
+
+```sql
+CREATE TABLE authors (
+    author_id INT AUTO_INCREMENT PRIMARY KEY,
+    author_name VARCHAR(100) NOT NULL
+);
+```
+
+<img src="./Assets/authortable.png" width="500"/>
+
+---
+
+## Create Books Table (Foreign Key)
+
+```sql
+CREATE TABLE books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_name VARCHAR(150) NOT NULL,
+    author_id INT,
+    book_published_date DATE,
+    book_price DECIMAL(10,2),
+    FOREIGN KEY (author_id) REFERENCES authors(author_id)
+);
+```
+
+---
+
+## Insert Author Data
+
+```sql
+INSERT INTO authors (author_name)
+VALUES
+('Paulo Coelho'),
+('James Clear'),
+('Robert Kiyosaki');
+```
+
+<img src="./Assets/authortable.png" width="500"/>
+
+---
+
+## Insert Book Data
+
+```sql
+INSERT INTO books (book_name, author_id, book_published_date, book_price)
+VALUES
+('The Alchemist', 1, '1988-04-15', 499),
+('Atomic Habits', 2, '2018-10-16', 699),
+('Rich Dad Poor Dad', 3, '1997-04-01', 550);
+```
+
+<img src="./Assets/bookdata.png" width="500"/>
+
+---
+
+## 🔍 Read All Books with Author Name
+
+```sql
+SELECT 
+b.book_id,
+b.book_name,
+a.author_name,
+b.book_published_date,
+b.book_price
+FROM books b
+JOIN authors a
+ON b.author_id = a.author_id;
+```
+
+<img src="./Assets/read all data.png" width="500"/>
+
+---
+
+## 🔍 Read One Book
+
+```sql
+SELECT * 
+FROM books
+WHERE book_id = 1;
+```
+
+<img src="./Assets/readone.png" width="500"/>
+
+---
+
+## ✏️ Update Book Price
+
+```sql
+UPDATE books
+SET book_price = 600
+WHERE book_id = 1;
+```
+
+---
+
+## ❌ Delete One Book
+
+```sql
+DELETE FROM books
+WHERE book_id = 3;
+```
+
+<img src="./Assets/delete.png" width="500"/>
+
+---
+
+## ❌ Delete Multiple Books
+
+```sql
+DELETE FROM books
+WHERE book_price > 500;
+```
+
+---
+
+# 🛠 Tools Used
 
 - MongoDB  
 - MongoDB Compass  
+- MySQL  
 - GitHub  
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
 **Suganthi**
