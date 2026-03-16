@@ -5,7 +5,7 @@ This repository demonstrates **CRUD operations** using:
 - **MongoDB (NoSQL)**
 - **SQL (Relational Database)**
 
-Example project: **Book Shop Database**
+project: **Book Shop Database**
 
 ---
 
