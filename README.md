@@ -9,13 +9,13 @@ Example project: **Book Shop Database**
 
 ---
 
-# 🍃 MongoDB CRUD Queries
+#  MongoDB CRUD Queries
 
 Basic CRUD operations using **MongoDB**.
 
 ---
 
-## 🗄 Create Database
+##  Create Database
 
 ```javascript
 use("book_shop")
@@ -25,7 +25,7 @@ use("book_shop")
 
 ---
 
-## ➕ Insert One Document
+##  Insert One Document
 
 ```javascript
 db.books.insertOne({
@@ -41,7 +41,7 @@ db.books.insertOne({
 
 ---
 
-## ➕ Insert Multiple Documents
+##  Insert Multiple Documents
 
 ```javascript
 db.books.insertMany([
@@ -66,7 +66,7 @@ db.books.insertMany([
 
 ---
 
-## ✏️ Update One Document
+##  Update One Document
 
 ```javascript
 db.books.updateOne(
@@ -79,7 +79,7 @@ db.books.updateOne(
 
 ---
 
-## ✏️ Update Multiple Documents
+##  Update Multiple Documents
 
 ```javascript
 db.books.updateMany(
@@ -92,7 +92,7 @@ db.books.updateMany(
 
 ---
 
-## 🔍 Find One Document
+##  Find One Document
 
 ```javascript
 db.books.findOne({ id: 1 })
@@ -102,7 +102,7 @@ db.books.findOne({ id: 1 })
 
 ---
 
-## 🔍 Find All Documents
+##  Find All Documents
 
 ```javascript
 db.books.find()
@@ -112,7 +112,7 @@ db.books.find()
 
 ---
 
-## ❌ Delete One Document
+##  Delete One Document
 
 ```javascript
 db.books.deleteOne({ id: 2 })
@@ -122,7 +122,7 @@ db.books.deleteOne({ id: 2 })
 
 ---
 
-## ❌ Delete Multiple Documents
+##  Delete Multiple Documents
 
 ```javascript
 db.books.deleteMany({ book_price: { $gt: 500 } })
@@ -132,7 +132,7 @@ db.books.deleteMany({ book_price: { $gt: 500 } })
 
 ---
 
-# 🗄 SQL CRUD Queries (Book Shop Database)
+#  SQL CRUD Queries (Book Shop Database)
 
 Basic CRUD operations using SQL with **Foreign Key relationship**.
 
