@@ -1,4 +1,4 @@
-# 📚 DB QUERY
+#  DB QUERY
 
 This repository demonstrates **CRUD operations** using:
 
@@ -203,7 +203,7 @@ VALUES
 
 ---
 
-## 🔍 Read All Books with Author Name
+##  Read All Books with Author Name
 
 ```sql
 SELECT 
@@ -233,7 +233,7 @@ WHERE book_id = 1;
 
 ---
 
-## ✏️ Update Book Price
+##  Update Book Price
 
 ```sql
 UPDATE books
@@ -243,7 +243,7 @@ WHERE book_id = 1;
 
 ---
 
-## ❌ Delete One Book
+##  Delete One Book
 
 ```sql
 DELETE FROM books
@@ -254,7 +254,7 @@ WHERE book_id = 3;
 
 ---
 
-## ❌ Delete Multiple Books
+##  Delete Multiple Books
 
 ```sql
 DELETE FROM books
